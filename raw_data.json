@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "project": "Week06_SSOT_Project",
+    "version": "0.2.0",
+    "updated": "2026-10-19",
+    "note": "单一事实源（SSOT）数据台账：所有事实条目在此登记，母稿与其他衍生物只引用、不复述原始来源。"
+  },
+  "sources": [
+    {
+      "id": "S02",
+      "type": "experiment",
+      "title": "2026_Campus_Sleep_Intervention 校园睡眠干预分组实验",
+      "origin": "实验数据截图（待补：采集仪器、干预周期、量表版本与采集人）",
+      "date": "2026-10-19",
+      "credibility": "medium",
+      "notes": "两臂平行对照，各 n=40；原始载荷见 datasets[0]。"
+    }
+  ],
+  "datasets": [
+    {
+      "dataset": "2026_Campus_Sleep_Intervention",
+      "groups": [
+        { "id": "G_Control", "mode": "睡前自由刷短视频", "n": 40, "pass_count": 17, "avg_sleep_sec": 2760, "morning_fatigue_cases": 29 },
+        { "id": "G_Exp", "mode": "灰阶屏幕+离床隔离", "n": 40, "pass_count": 34, "avg_sleep_sec": 840, "morning_fatigue_cases": 3 }
+      ]
+    }
+  ],
+  "facts": [
+    {
+      "id": "F002",
+      "source_id": "S02",
+      "category": "baseline",
+      "statement": "对照组（睡前自由刷短视频，n=40）平均入睡耗时 2760 秒（=46 分钟）。",
+      "value": 2760,
+      "unit": "sec",
+      "conditions": "group=G_Control, n=40",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03a"]
+    },
+    {
+      "id": "F003",
+      "source_id": "S02",
+      "category": "outcome",
+      "statement": "实验组（灰阶屏幕+离床隔离，n=40）平均入睡耗时 840 秒（=14 分钟）。",
+      "value": 840,
+      "unit": "sec",
+      "conditions": "group=G_Exp, n=40",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03b"]
+    },
+    {
+      "id": "F004",
+      "source_id": "S02",
+      "category": "derived",
+      "statement": "实验组入睡耗时较对照组缩短 1920 秒（32 分钟，相对下降 69.6%）。",
+      "value": 1920,
+      "unit": "sec",
+      "conditions": "derived from F002-F003（值换算与相对比率为派生计算，非原始记录）",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03b"]
+    },
+    {
+      "id": "F005",
+      "source_id": "S02",
+      "category": "outcome",
+      "statement": "晨间疲乏发生例数：对照组 29/40（72.5%），实验组 3/40（7.5%）。",
+      "value": { "control": "29/40", "exp": "3/40" },
+      "unit": "cases",
+      "conditions": "morning_fatigue_cases，比例百分数为派生计算",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03c"]
+    },
+    {
+      "id": "F006",
+      "source_id": "S02",
+      "category": "outcome",
+      "statement": "30 分钟入睡达标率（pass_count/n）：对照组 42.5%（17/40），实验组 85.0%（34/40）。",
+      "value": { "control": "42.5%", "exp": "85.0%" },
+      "unit": "percent",
+      "conditions": "pass_count/n，比率为派生计算；字段语义经撰写任务确认为\"30 分钟入睡达标人数\"",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03b"]
+    },
+    {
+      "id": "F007",
+      "source_id": "S02",
+      "category": "design",
+      "statement": "两组各 n=40；实验组干预为\"灰阶屏幕+离床隔离\"，对照组为\"睡前自由刷短视频\"。",
+      "value": null,
+      "unit": "",
+      "conditions": "分组定义",
+      "confidence": "confirmed",
+      "used_in": ["report.md#S-03a"]
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q002",
+      "question": "pass_count 的定义是什么（依从达标人数 / 问卷合格回收数 / 其他）？确认前不得写入母稿。",
+      "resolution": "已确认：pass_count/n 即 30 分钟入睡达标率（见 F006）。",
+      "related_facts": ["F006"],
+      "status": "resolved"
+    },
+    {
+      "id": "Q003",
+      "question": "入睡耗时（avg_sleep_sec）由何种仪器测得（腕动仪 / 自报睡眠日记）？缺统计检验信息（无 SD、p 值），3.2 段落只能呈现点估计并声明局限。",
+      "related_facts": ["F002", "F003", "F004"],
+      "status": "open"
+    }
+  ]
+}

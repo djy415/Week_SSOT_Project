@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>睡前灰阶与离床充电隔离对大学生入睡潜伏期的干预研究 · 现场演说课件</title>
+<style>
+  :root { --bg:#0f172a; --fg:#e2e8f0; --accent:#38bdf8; --accent2:#818cf8; --ok:#34d399; --warn:#fbbf24; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:var(--bg); color:var(--fg); overflow:hidden; }
+  .slide { display:none; position:absolute; inset:0; padding:6vh 8vw; flex-direction:column; justify-content:center; }
+  .slide.active { display:flex; animation:fade .45s ease; }
+  @keyframes fade { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+  .kicker { color:var(--accent); font-size:.95em; letter-spacing:.35em; margin-bottom:1.2em; }
+  h1 { font-size:2.6em; line-height:1.3; margin-bottom:.6em; }
+  h2 { font-size:2.1em; color:var(--accent); margin-bottom:.9em; }
+  h3 { font-size:1.3em; color:var(--accent2); margin:.8em 0 .4em; }
+  p, li { font-size:1.25em; line-height:1.8; }
+  ul { padding-left:1.4em; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.2em; margin-top:1em; }
+  .card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:14px; padding:1.2em 1.4em; }
+  .card b { color:var(--accent); display:block; margin-bottom:.4em; font-size:1.05em; }
+  table { border-collapse:collapse; margin:1.2em auto; width:100%; font-size:1.15em; }
+  th, td { border:1px solid rgba(255,255,255,.2); padding:.55em 1em; text-align:center; }
+  th { background:rgba(56,189,248,.15); color:var(--accent); }
+  .formula { background:rgba(129,140,248,.12); border-left:4px solid var(--accent2); padding:1em 1.4em; border-radius:8px; font-size:1.35em; margin:1em 0; font-family:Georgia,serif; }
+  .hl { color:var(--ok); font-weight:700; }
+  .warn { color:var(--warn); }
+  .foot { position:absolute; bottom:3vh; left:8vw; right:8vw; display:flex; justify-content:space-between; font-size:.85em; color:#64748b; }
+  #bar { position:fixed; top:0; left:0; height:4px; background:linear-gradient(90deg,var(--accent),var(--accent2)); width:0; transition:width .3s; z-index:9; }
+  .nav { position:fixed; bottom:3vh; right:8vw; display:flex; gap:.6em; }
+  .nav button { background:rgba(255,255,255,.1); color:var(--fg); border:1px solid rgba(255,255,255,.25); border-radius:8px; padding:.4em 1em; font-size:1em; cursor:pointer; }
+  .nav button:hover { background:var(--accent); color:#0f172a; }
+  .chain { display:flex; flex-wrap:wrap; gap:.5em; align-items:center; margin:1em 0; font-size:1.15em; }
+  .chain span { background:rgba(56,189,248,.12); border:1px solid rgba(56,189,248,.4); border-radius:999px; padding:.3em 1em; }
+  .chain i { color:var(--accent); font-style:normal; }
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<section class="slide active">
+  <div class="kicker">WEEK06 · SSOT 项目现场演说</div>
+  <h1>睡前灰阶模式与离床充电隔离<br>对大学生入睡潜伏期的干预研究</h1>
+  <p class="warn">题眼：灰阶 + 离床充电，能否阻断短视频多巴胺唤醒并显著缩短入睡潜伏期？</p>
+  <p style="margin-top:2em;color:#64748b">← → 方向键 / 点击按钮翻页 · 数据事实源：raw_data.json</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">01 · 表层熬夜现象</div>
+  <h2>问题锚定</h2>
+  <ul>
+    <li>就寝拖延与报复性熬夜：<b>短视频无限下滑续播</b>让"再看一条"不断延长</li>
+    <li>入睡潜伏期被持续推后，成为普遍现象</li>
+  </ul>
+  <h3>本研究要回答的问题</h3>
+  <p>睡前刷屏行为能否通过<b>降低奖赏</b>与<b>增加取用摩擦</b>被有效阻断？（F007）</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">02 · 沉迷生理机理</div>
+  <h2>为什么停不下来、睡不着</h2>
+  <div class="cards">
+    <div class="card"><b>间歇性变比多巴胺强化</b>内容不可预期，间歇性奖赏驱动持续下滑刷屏</div>
+    <div class="card"><b>蓝光抑制褪黑素</b>夜间屏幕蓝光抑制褪黑素分泌，睡眠时相后移</div>
+    <div class="card"><b>睡前高唤醒交感激活</b>认知与情绪唤起阻断睡意启动</div>
+  </div>
+</section>
+
+<section class="slide">
+  <div class="kicker">03 · 断网干预对照实证</div>
+  <h2>核心指标对比（两组各 n=40）</h2>
+  <table>
+    <tr><th>指标</th><th>对照组 · 自由刷短视频</th><th>实验组 · 灰阶+离床隔离</th><th>组间差</th></tr>
+    <tr><td>平均入睡潜伏期（分钟）</td><td>46.0</td><td class="hl">14.0</td><td>-32.0</td></tr>
+    <tr><td>30 分钟入睡达标率</td><td>42.5%</td><td class="hl">85.0%</td><td>+42.5 pp</td></tr>
+    <tr><td>次日早八困倦率</td><td>72.5%</td><td class="hl">7.5%</td><td>-65.0 pp</td></tr>
+  </table>
+  <div class="formula">缩短率 = (46.0 − 14.0) ÷ 46.0 × 100% ≈ <span class="hl">69.6%</span></div>
+  <p style="color:#64748b;font-size:.95em">数据来源：raw_data.json F002–F006 · 无 SD/p 值，为点估计</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">03 · 因果链条</div>
+  <h2>干预如何起作用</h2>
+  <div class="chain">
+    <span>灰阶剥离视觉多巴胺刺激</span><i>＋</i>
+    <span>离床隔离打断无意识解锁</span><i>→</i>
+    <span>切断"奖赏—解锁—刷屏"回路</span><i>→</i>
+    <span>睡前刷屏时间压缩</span><i>→</i>
+    <span class="hl" style="border-color:var(--ok)">入睡潜伏期缩短</span>
+  </div>
+  <p class="warn" style="margin-top:1.5em">注：未提供夜间屏幕使用时长的中介测量，机理归因为定性推论。</p>
+</section>
+
+<section class="slide">
+  <div class="kicker">03 · 外部效度</div>
+  <h2>早八困倦率验证</h2>
+  <ul>
+    <li>次日早八困倦率：72.5%（29/40）降至 <span class="hl">7.5%</span>（3/40，F005）</li>
+    <li>下降 65.0 个百分点，相对下降 89.7%</li>
+    <li>排除"只是早躺、并未真睡"的替代解释</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">04 · 结论与边界</div>
+  <h2>结论</h2>
+  <p>灰阶叠加离床充电隔离与入睡潜伏期大幅缩短（46.0 → 14.0 分钟，-69.6%）、次日困倦大幅下降同时出现，<span class="hl">支持题眼主张</span>。</p>
+  <h3>边界（诚实声明）</h3>
+  <ul>
+    <li class="warn">无标准差与统计检验量，仅为点估计（Q003）</li>
+    <li class="warn">测量仪器未注明（腕动仪或自报日记）</li>
+    <li class="warn">单校 80 人样本，外推需谨慎</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <div class="kicker">SSOT 工作流</div>
+  <h2>事实只登记一次</h2>
+  <div class="chain">
+    <span>raw_data.json 台账</span><i>→</i>
+    <span>outline_spec.md 规约</span><i>→</i>
+    <span>report.md 母稿</span><i>→</i>
+    <span>slides.html / report.pdf 衍生</span>
+  </div>
+  <p style="margin-top:1.5em">衍生物只改形态、不改事实；发现事实错误，回到台账修正后重新生成。</p>
+  <p style="margin-top:3em;color:var(--accent);font-size:1.5em">谢谢聆听 · Q&amp;A</p>
+</section>
+
+<div class="nav">
+  <button onclick="go(-1)">← 上一页</button>
+  <button onclick="go(1)">下一页 →</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let cur = 0;
+  function show(i) {
+    cur = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+    document.getElementById('bar').style.width = ((cur + 1) / slides.length * 100) + '%';
+  }
+  function go(d) { show(cur + d); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') go(1);
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') go(-1);
+    if (e.key === 'Home') show(0);
+    if (e.key === 'End') show(slides.length - 1);
+  });
+  show(0);
+</script>
+</body>
+</html>
